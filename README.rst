@@ -145,14 +145,16 @@ Wordpress API with Basic authentication:
 WP REST API v2:
 ----
 (Note: the username and password are required so that it can fill out the oauth request token form automatically for you.
-Requires OAuth 1.0a plugin. )
+Requires OAuth 1.0a plugin.)
+
+The `callback` has to be the same as configured in WordPress in `Users / Applications`.
 
 .. code-block:: python
 
     #...
 
     wpapi = API(
-        url="http://example.com",
+        url="https://example.com",
         consumer_key="XXXXXXXXXXXX",
         consumer_secret="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         api="wp-json",
@@ -160,6 +162,7 @@ Requires OAuth 1.0a plugin. )
         wp_user="XXXX",
         wp_pass="XXXX",
         oauth1a_3leg=True,
+        callback="https://example.com",
         creds_store="~/.wc-api-creds.json"
     )
 

@@ -631,7 +631,7 @@ class OAuth_3Leg(OAuth):
         if os.path.isfile(self.creds_store):
             with open(self.creds_store, 'r') as creds_store_file:
                 try:
-                    creds = json.load(creds_store_file, encoding='utf-8')
+                    creds = json.load(creds_store_file)
                 except ValueError:
                     pass
 
